@@ -19,8 +19,8 @@ if has('vim_starting')
 endif
 
 " Required:
-"call g:neobundle#begin(expand('~/.vim/bundle/'))
-call g:neobundle#begin(expand('$BUNDLE_DIR'))
+"call neobundle#begin(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('$BUNDLE_DIR'))
 
 " NeoBundleをNeoBundle自体で管理する
 " Required:
@@ -111,7 +111,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " }}}
 
 " Required:
-call g:neobundle#end()
+call neobundle#end()
 
 " ファイルタイプ別のプラグイン/インデントを有効にする
 " Required:
@@ -760,7 +760,7 @@ endif
 " @プラグインごとの設定 Plugins {{{
 
 " Neobundle {{{
-let g:neobundle#install_process_timeout = 1500
+let neobundle#install_process_timeout = 1500
 " }}}
 
 
@@ -798,7 +798,7 @@ let g:neobundle#install_process_timeout = 1500
 " CtrlP {{{
 
 " http://qiita.com/rbtnn/items/600ac451ebb43b2c9c13
-let s:bundle = g:neobundle#get('ctrlp.vim')
+let s:bundle = neobundle#get('ctrlp.vim')
 function! s:bundle.hooks.on_source(bundle)
   " 目一杯に一覧が出る
   let g:ctrlp_max_height = &lines
@@ -820,13 +820,13 @@ unlet s:bundle
 
 " }}}
 
-let s:bundle = g:neobundle#get('dbext.vim')
+let s:bundle = neobundle#get('dbext.vim')
 function! s:bundle.hooks.on_source(bundle)
   source ~/dotfiles/.vimrc.dbext
 endfunction
 unlet s:bundle
 
-let s:bundle = g:neobundle#get('tern_for_vim')
+let s:bundle = neobundle#get('tern_for_vim')
 function! s:bundle.hooks.on_source(bundle)
 endfunction
 unlet s:bundle
@@ -954,7 +954,7 @@ nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
 nnoremap <silent> <Leader>m :CtrlPMRUFiles<CR>
 
 " smartinput
-let s:bundle = g:neobundle#get('vim-smartinput')
+let s:bundle = neobundle#get('vim-smartinput')
 function! s:bundle.hooks.on_source(bundle)
   call g:smartinput#map_to_trigger('i', '<Plug>(smartinput_BS)',
         \                          '<BS>',
