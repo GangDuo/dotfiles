@@ -1,3 +1,4 @@
+alias sudo='sudo '
 alias ..='cd ..'
 alias vi='vim'
 alias c='clear'
